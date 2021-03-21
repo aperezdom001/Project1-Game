@@ -4,9 +4,9 @@
 //// PROTECT TITLE: THE POWER OF DREAMS & NIGHTMARES ////name may change
 
 Synopsis: 
-The player is transferred into a peculiar realm one day in their sleep. 
-This is like a realm in between someone's dreams and nightmares. Player wakes
-up to creatures of day and night chasing them with the intent to destroy them.
+The player is transferred into a peculiar realm between dreams and 
+nightmares one day in their sleep.  Player wakes up to creatures of
+day and night chasing them with the intent to destroy them.
 
 The player fights against these enemies by using their strongest dream (strength, confidence)
 and nightmare (weakness, fear) to defeat them.
