@@ -22,10 +22,14 @@ class userPlayer{
 
     dreamAttack(enemy){
         console.log("Dream attack!");
+        enemy.health = dreamPower - enemy.health;
+        console.log(enemy.health);
     }
     
     nightmarePower(enemy){
         console.log("Nightmare attack!");
+        enemy.health = this.nightmarePower - enemy.health;
+        console.log(enemy.health);
     }
 
 }
@@ -42,6 +46,8 @@ class compEnemy {
 
     enemyAttack(player){
         console.log("Enemy attack!");
+        player.health = this.enemyPower - player.health;
+        console.log(player.health);
     }
 }
 
