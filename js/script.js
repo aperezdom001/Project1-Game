@@ -1,4 +1,4 @@
-alert("Does this work?");
+
 
 // NODE ELEMENTS //
 
@@ -20,11 +20,11 @@ class userPlayer{
     }
 
 
-    dreamAttack(){
+    dreamAttack(enemy){
         console.log("Dream attack!");
     }
     
-    nightmarePower(){
+    nightmarePower(enemy){
         console.log("Nightmare attack!");
     }
 
@@ -40,16 +40,19 @@ class compEnemy {
         
     }
 
-    enemyAttack(){
+    enemyAttack(player){
         console.log("Enemy attack!");
     }
 }
 
-const player = new userPlayer ("Alex");
+const player1 = new userPlayer ("Alex");
 
 // FUNCTIONS //
 
 // EVENT LISTENERS //
 
+
+// Testing Code //
 // console.log("uno, dos, tres, si, si");
 // console.log("Te quiero mucho");
+//alert("Does this work?");
