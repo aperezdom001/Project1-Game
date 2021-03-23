@@ -14,8 +14,8 @@ p{
 }
 
 .player {
-  max-width: 100;
-  height: auto; 
+ position: relative;
+ top: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

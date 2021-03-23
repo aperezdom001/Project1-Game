@@ -2,10 +2,11 @@
 
 // NODE ELEMENTS //
 
-const startButton = document.querySelector("button");
-const dreamButton = document.querySelector("button");
-const nightmareButton = document.querySelector("button");
-const giveUpButton = document.querySelector("button");
+const startButton = document.querySelector("#start");
+const dreamButton = document.querySelector("#dream");
+const nightmareButton = document.querySelector("#nightmare");
+const giveUpButton = document.querySelector("#give-up");
+const scoreBoard = document.querySelector("#score");
 
 // GLOBAL VARIABLES //
 
@@ -24,14 +25,14 @@ class userPlayer{
 
     dreamAttack(enemy){
         console.log("Dream attack!");
-        enemy.health = this.dreamPower - enemy.health;
-        console.log(enemy.health);
+        enemy.enemyHealth =  enemy.enemyHealth - this.dreamPower;
+        console.log(enemy.enemyHealth);
     }
     
     nightmareAttack(enemy){
         console.log("Nightmare attack!");
-        enemy.health = this.nightmarePower - enemy.health;
-        console.log(enemy.health);
+        enemy.enemyHealth =   enemy.enemyHealth - this.nightmarePower;
+        console.log(enemy.enemyHealth);
     }
 
 }
@@ -56,14 +57,14 @@ class compEnemy {
 const player1 = new userPlayer ("Alex");
 const enemy1 = new compEnemy("Enemy 1");
 
-console.log(player1);
-console.log(enemy1);
+// console.log(player1);
+// console.log(enemy1);
 
-player1.dreamAttack(enemy1);
-console.log(player1.dreamAttack(enemy1));
+// player1.dreamAttack(enemy1);
+// console.log(player1.dreamAttack(enemy1));
 
-enemy1.enemyAttack(player1);
-console.log(enemy1.enemyAttack(player1));
+// enemy1.enemyAttack(player1);
+// console.log(enemy1.enemyAttack(player1));
 
 // FUNCTIONS //
 
@@ -71,13 +72,12 @@ const startGame = () => {
     console.log("Start!!");
 }
 
-const scoreUpdate = () => { //a little confused, but it's ok
-    for(let i = 0; i < 0; player1.playerHealth++){
-        return player1.playerHealth;
-       
-    }
+const scoreUpdate = (increase = 0) => { //a little confused, but it's ok
+    score+= increase;
     console.log("SCORE: " + score);
+    scoreBoard.innerHTML = score;
 }
+
 
 const giveUp = () => { //ask questionxs
     const giveAlert = prompt("Your health is " +
@@ -102,25 +102,28 @@ const gameOver = () => {
 
 }
 
-startGame();
-console.log(startGame());
+// startGame();
+// console.log(startGame());
 
-scoreUpdate();
-console.log(scoreUpdate());
+// scoreUpdate();
+// console.log(scoreUpdate());
 
-giveUp();
-console.log(giveUp());
+// giveUp();
+// console.log(giveUp());
 
-gameOver();
-console.log(gameOver());
+// gameOver();
+// console.log(gameOver());
 
 
 // EVENT LISTENERS //
 
-startButton.addEventListener("click", startGame());
-dreamButton.addEventListener("click", player1.dreamAttack());
-nightmareButton.addEventListener("click", player1.nightmareAttack());
-giveUpButton.addEventListener("click", giveUp());
+startButton.addEventListener("click", startGame);
+dreamButton.addEventListener("click", () =>{
+    player1.dreamAttack(enemy1);
+    scoreUpdate(5);
+});
+nightmareButton.addEventListener("click", player1.nightmareAttack);
+giveUpButton.addEventListener("click", giveUp);
 
 
 // Testing Code //
