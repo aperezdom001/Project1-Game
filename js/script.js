@@ -42,7 +42,7 @@ class compEnemy {
     constructor(name){
         this.name = name;
         this.enemyHealth = 15;
-        this.enemyPower = 3;
+        this.enemyPower = 8;
         
     }
  
@@ -80,13 +80,16 @@ const scoreUpdate = () => { //a little confused, but it's ok
 }
 
 const giveUp = () => { //ask questionxs
+    const giveAlert = prompt("Your health is " +
+    player1.playerHealth + ". Do you want to give up?");
     if(player1.playerHealth <= 15){
-        const giveAlert = prompt("Your health is " +
-        player1.playerHealth + ". Do you want to give up?");
+        giveAlert;
     } else if (giveAlert === "yes"){
         const yesPrompt = alert ("Oh no! You became an evil creature and will forever haunt those tho run into you...");
+        yesPrompt;
     }else if (giveAlert === "no"){
         const noPrompt = alert ("Keep fighting!!! Don't lose hope.");
+        noPrompt;
     }
 }
 
