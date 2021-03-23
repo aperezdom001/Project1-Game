@@ -62,13 +62,16 @@ console.log(enemy1);
 player1.dreamAttack(enemy1);
 console.log(player1.dreamAttack(enemy1));
 
+enemy1.enemyAttack(player1);
+console.log(enemy1.enemyAttack(player1));
+
 // FUNCTIONS //
 
 const startGame = () => {
     console.log("Start!!");
 }
 
-const scoreUpdate = () => {
+const scoreUpdate = () => { //a little confused, but it's ok
     for(let i = 0; i < 0; player1.playerHealth++){
         return player1.playerHealth;
        
@@ -76,13 +79,40 @@ const scoreUpdate = () => {
     console.log("SCORE: " + score);
 }
 
+const giveUp = () => { //ask questionxs
+    if(player1.playerHealth <= 15){
+        const giveAlert = prompt("Your health is " +
+        player1.playerHealth + ". Do you want to give up?");
+    } else if (giveAlert === "yes"){
+        const yesPrompt = alert ("Oh no! You became an evil creature and will forever haunt those tho run into you...");
+    }else if (giveAlert === "no"){
+        const noPrompt = alert ("Keep fighting!!! Don't lose hope.");
+    }
+}
+
 const gameOver = () => {
+    if(player1.health <= 0){
+        const overAlert = alert("Oh no! You became an evil creature and will forever haunt those tho run into you...");
+    }
     console.log("Whoops, game over.");
 
 }
 
+startGame();
+console.log(startGame());
+
+scoreUpdate();
+console.log(scoreUpdate());
+
+giveUp();
+console.log(giveUp());
+
+gameOver();
+console.log(gameOver());
+
 
 // EVENT LISTENERS //
+
 
 
 // Testing Code //
