@@ -28,7 +28,7 @@ class userPlayer{
         console.log(enemy.health);
     }
     
-    nightmarePower(enemy){
+    nightmareAttack(enemy){
         console.log("Nightmare attack!");
         enemy.health = this.nightmarePower - enemy.health;
         console.log(enemy.health);
@@ -93,6 +93,7 @@ const giveUp = () => { //ask questionxs
 const gameOver = () => {
     if(player1.health <= 0){
         const overAlert = alert("Oh no! You became an evil creature and will forever haunt those tho run into you...");
+        return overAlert;
     }
     console.log("Whoops, game over.");
 
@@ -113,6 +114,10 @@ console.log(gameOver());
 
 // EVENT LISTENERS //
 
+startButton.addEventListener("click", startGame());
+dreamButton.addEventListener("click", player1.dreamAttack());
+nightmareButton.addEventListener("click", player1.nightmareAttack());
+giveUpButton.addEventListener("click", giveUp());
 
 
 // Testing Code //
