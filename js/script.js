@@ -11,6 +11,7 @@ const scoreBoard = document.querySelector("#score");
 // GLOBAL VARIABLES //
 
 let score = 0;
+let rounds = 1;
 
 // CLASSES //
 
@@ -43,7 +44,7 @@ class compEnemy {
     constructor(name){
         this.name = name;
         this.enemyHealth = 25;
-        this.enemyPower = 8;
+        this.enemyPower = this.enemyPower;
         
     }
  
@@ -55,11 +56,13 @@ class compEnemy {
 }
 
 const player1 = new userPlayer ("Alex");
-const enemy1 = new compEnemy("Enemy 1");
-const enemy2 = new compEnemy("Enemy 1")
+const enemy1 = new compEnemy("Enemy 1", 3);
+const enemy2 = new compEnemy("Enemy 2", 6)
+
 
 // console.log(player1);
-// console.log(enemy1);
+ console.log(enemy1);
+ console.log(enemy2);
 
 // player1.dreamAttack(enemy1);
 // console.log(player1.dreamAttack(enemy1));
@@ -73,12 +76,28 @@ const startGame = () => {
     console.log("Start!!");
 }
 
-const scoreUpdate = (increase = 0) => { 
-    score+= increase;
+//notes: reach a certain amount in your score to go to the next round
+const theRounds = (nextRound = 1) => {
+    while(score >= 5){
+        rounds =+ nextRound;
+        //Round two begins
+       // console.log("Round2");
+       if(score >=15){
+           //Round three
+           rounds =+ nextRound;
+       }
+       else if (score>=25){
+           //round four
+           rounds =+ nextRound;
+       }
+    }
+}
+
+const scoreUpdate = (points = 0) => { 
+    score+= points;
     console.log("SCORE: " + score);
     scoreBoard.innerHTML = score;
 }
-
 
 const giveUp = () => { //ask questionxs
     const giveAlert = prompt("Your health is " +
@@ -112,7 +131,8 @@ dreamButton.addEventListener("click", () =>{
 });
 nightmareButton.addEventListener("click", () => {
     player1.nightmareAttack(enemy1);
-    scoreUpdate(10);
+    player1.nightmareAttack(enemy2);
+    scoreUpdate(8);
 });
 giveUpButton.addEventListener("click", () => {
     scoreUpdate(0);
