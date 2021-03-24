@@ -12,12 +12,14 @@ h1 {
   text-align: right;
   color: gold;
   display:inline;
+  top: auto;
 }
 
 .the-Health{
   text-align: left;
   color: green;
   display: inline;
+  top:auto;
 }
 h3{
   color: blue;
@@ -26,10 +28,12 @@ h3{
 p{
   text-align:left;
   color: black;
+  margin-left:auto;
 }
 
 .player, .enemy {
  display: inline-block;
+ top:auto;
 
 }
 

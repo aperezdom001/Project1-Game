@@ -56,6 +56,7 @@ class compEnemy {
 
 const player1 = new userPlayer ("Alex");
 const enemy1 = new compEnemy("Enemy 1");
+const enemy2 = new compEnemy("Enemy 1")
 
 // console.log(player1);
 // console.log(enemy1);
