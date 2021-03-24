@@ -4,14 +4,20 @@ h1 {
   color: blue;
 }
 
+.right {
+  display: inline-block;
+}
+
 .the-Score {
   text-align: right;
-  color: yellow;
+  color: gold;
+  display:inline;
 }
 
 .the-Health{
   text-align: left;
-  color: yellow;
+  color: green;
+  display: inline;
 }
 h3{
   color: blue;
@@ -22,9 +28,9 @@ p{
   color: black;
 }
 
-#player {
- position: relative;
- top: auto;
+.player, .enemy {
+ display: inline-block;
+
 }
 
 /*# sourceMappingURL=main.css.map */
