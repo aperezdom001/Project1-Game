@@ -4,15 +4,23 @@ h1 {
   color: blue;
 }
 
+.left {
+  float: left; 
+  width: 50%;
+}
 .right {
-  display: inline-block;
+  float: right;
+  width: 50%
 }
 
 .the-Score {
+  float: right;
+  width: 50%;
   text-align: right;
   color: gold;
-  display:inline;
-  top: auto;
+  /* display:inline;
+  top: auto; */
+  
 }
 
 .the-Health{
