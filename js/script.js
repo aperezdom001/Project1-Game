@@ -42,15 +42,15 @@ class userPlayer{
 class compEnemy {
     constructor(name){
         this.name = name;
-        this.enemyHealth = 15;
+        this.enemyHealth = 25;
         this.enemyPower = 8;
         
     }
  
     enemyAttack(player){  //for now, add the type of orbs later 
         console.log("Enemy attack!");
-        player.health = this.enemyPower - player.health;
-        console.log(player.health);
+        player.playerHealth = player.playerHealth - this.enemyPower;
+        console.log(player.playerHealth);
     }
 }
 
@@ -72,7 +72,7 @@ const startGame = () => {
     console.log("Start!!");
 }
 
-const scoreUpdate = (increase = 0) => { //a little confused, but it's ok
+const scoreUpdate = (increase = 0) => { 
     score+= increase;
     console.log("SCORE: " + score);
     scoreBoard.innerHTML = score;
@@ -81,7 +81,7 @@ const scoreUpdate = (increase = 0) => { //a little confused, but it's ok
 
 const giveUp = () => { //ask questionxs
     const giveAlert = prompt("Your health is " +
-    player1.playerHealth + ". Do you want to give up?");
+    player1.playerHealth + ". Do you want to give up? yes or no?");
     if(player1.playerHealth <= 15){
         giveAlert;
     } else if (giveAlert === "yes"){
@@ -94,13 +94,34 @@ const giveUp = () => { //ask questionxs
 }
 
 const gameOver = () => {
-    if(player1.health <= 0){
+    if(player1.playerHealth <= 0){
         const overAlert = alert("Oh no! You became an evil creature and will forever haunt those tho run into you...");
         return overAlert;
     }
     console.log("Whoops, game over.");
 
 }
+
+// EVENT LISTENERS //
+
+startButton.addEventListener("click", startGame);
+dreamButton.addEventListener("click", () =>{
+    player1.dreamAttack(enemy1);
+    scoreUpdate(5);
+});
+nightmareButton.addEventListener("click", () => {
+    player1.nightmareAttack(enemy1);
+    scoreUpdate(10);
+});
+giveUpButton.addEventListener("click", () => {
+    scoreUpdate(0);
+});
+
+
+// Testing Code //
+// console.log("uno, dos, tres, si, si");
+// console.log("Te quiero mucho");
+//alert("Does this work?");
 
 // startGame();
 // console.log(startGame());
@@ -113,20 +134,3 @@ const gameOver = () => {
 
 // gameOver();
 // console.log(gameOver());
-
-
-// EVENT LISTENERS //
-
-startButton.addEventListener("click", startGame);
-dreamButton.addEventListener("click", () =>{
-    player1.dreamAttack(enemy1);
-    scoreUpdate(5);
-});
-nightmareButton.addEventListener("click", player1.nightmareAttack);
-giveUpButton.addEventListener("click", giveUp);
-
-
-// Testing Code //
-// console.log("uno, dos, tres, si, si");
-// console.log("Te quiero mucho");
-//alert("Does this work?");

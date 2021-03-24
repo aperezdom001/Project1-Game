@@ -4,6 +4,15 @@ h1 {
   color: blue;
 }
 
+.the-Score {
+  text-align: right;
+  color: yellow;
+}
+
+.the-Health{
+  text-align: left;
+  color: yellow;
+}
 h3{
   color: blue;
 }
@@ -13,7 +22,7 @@ p{
   color: black;
 }
 
-.player {
+#player {
  position: relative;
  top: auto;
 }
