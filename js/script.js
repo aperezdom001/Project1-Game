@@ -46,14 +46,13 @@ class compEnemy {
     constructor(name){
         this.name = name;
         this.enemyHealth = 25;
-        this.enemyPower = Math.floor(Math.random() * 3 + 4);
+        this.enemyPower = Math.floor(Math.random() * 5 + 6);
         
 
         
     }
  
-    enemyAttack(player){  //for now, add the type of orbs later 
-        console.log("Enemy attack!");
+    enemyAttack(player){  
         player.playerHealth = player.playerHealth - this.enemyPower;
         console.log(player.playerHealth);
     }
@@ -63,16 +62,8 @@ const player1 = new userPlayer ("Alex");
 const enemy1 = new compEnemy("Enemy 1");
 const enemy2 = new compEnemy("Enemy 2");
 
-
-// console.log(player1);
  console.log(enemy1);
  console.log(enemy2);
-
-// player1.dreamAttack(enemy1);
-// console.log(player1.dreamAttack(enemy1));
-
-// enemy1.enemyAttack(player1);
-// console.log(enemy1.enemyAttack(player1));
 
 // FUNCTIONS //
 
@@ -83,7 +74,7 @@ const startGame = () => {
 }
 
 //notes: reach a certain amount in your score to go to the next round
-const theRounds = (nextRound = 1) => {
+const theRounds = () => {
     if(score >= 25){
         rounds = 4;
         
@@ -95,22 +86,6 @@ const theRounds = (nextRound = 1) => {
 
     threeRounds.innerHTML = rounds;
 
-    // if(score >= 5){
-    //     rounds =+ nextRound;
-    //     threeRounds.innerHTML =score;
-    //     //Round two begins
-    //    // console.log("Round2");
-    //    if(score >=15){
-    //        //Round three
-    //        rounds =+ nextRound;
-    //        threeRounds.innerHTML =score;
-    //    }
-    //    else if (score>=25){
-    //        //round four!
-    //        rounds =+ nextRound;
-    //        threeRounds.innerHTML =score;
-    //    }
-    // }
 }
 
 const scoreUpdate = (points = 0) => { 
@@ -119,7 +94,7 @@ const scoreUpdate = (points = 0) => {
     scoreBoard.innerHTML = score;
 }
 
-const giveUp = () => { //ask questionxs
+const giveUp = () => { 
     const giveAlert = prompt("Your health is " +
     player1.playerHealth + ". Do you want to give up? yes or no?");
     
@@ -140,6 +115,7 @@ const gameOver = () => {
         const overAlert = alert("Oh no! You became an evil creature and will forever haunt those tho run into you...");
         return overAlert;
     }
+    window.location.reload();
     console.log("Whoops, game over.");
 
 }
@@ -153,6 +129,7 @@ dreamButton.addEventListener("click", () =>{
     theRounds();
     enemy1.enemyAttack(player1);
     pHealth.innerHTML = player1.playerHealth;
+    
 });
 nightmareButton.addEventListener("click", () => {
     player1.nightmareAttack(enemy1);
@@ -162,25 +139,12 @@ nightmareButton.addEventListener("click", () => {
     enemy1.enemyAttack(player1);
     enemy2.enemyAttack(player1);
     pHealth.innerHTML = player1.playerHealth;
+  
 });
 giveUpButton.addEventListener("click", () => {
     giveUp(); 
 });
 
 
-// Testing Code //
-// console.log("uno, dos, tres, si, si");
-// console.log("Te quiero mucho");
-//alert("Does this work?");
 
-// startGame();
-// console.log(startGame());
 
-// scoreUpdate();
-// console.log(scoreUpdate());
-
-// giveUp();
-// console.log(giveUp());
-
-// gameOver();
-// console.log(gameOver());
