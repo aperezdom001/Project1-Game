@@ -1,21 +1,49 @@
 
-h1 {
+body > h1 {
+  position:absolute;
+  top: 1rem;
+  left: 50%;
   text-align: center;
+  transform: translate( -50% , -50%);
   color: blue;
 }
 
-.left {
-  float: left; 
-  width: 50%;
-}
-.right {
-  float: right;
-  width: 50%
+body{
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.the-Score {
-  float: right;
+.container{
+  display: flex;
+  position: absolute;
+  top: 5rem;
+  max-width: 100vw;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   width: 50%;
+  
+}
+.right {
+  flex: 1;
+  width: 50%;
+  background-image: url("../images/DREAMY.png");
+  background-size: contain;
+}
+
+.right > img {
+  width: 100%;
+}
+
+.the-Score , .the-Health, .the-Round{
+  display: flex;
+  flex-direction: row;
+  /* float: right;
+  width: 50%; */
   text-align: right;
   color: gold;
   /* display:inline;
@@ -23,12 +51,13 @@ h1 {
   
 }
 
-.the-Health{
+/* .the-Health{
   text-align: left;
   color: green;
   display: inline;
   top:auto;
-}
+} */
+
 h3{
   color: blue;
 }

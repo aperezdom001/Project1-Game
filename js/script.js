@@ -128,11 +128,14 @@ startButton.addEventListener("click", startGame);
 dreamButton.addEventListener("click", () =>{
     player1.dreamAttack(enemy1);
     scoreUpdate(5);
+    enemy1.enemyAttack(player1);
 });
 nightmareButton.addEventListener("click", () => {
     player1.nightmareAttack(enemy1);
     player1.nightmareAttack(enemy2);
     scoreUpdate(8);
+    enemy1.enemyAttack(player1);
+    enemy2.enemyAttack(player1);
 });
 giveUpButton.addEventListener("click", () => {
     scoreUpdate(0);
