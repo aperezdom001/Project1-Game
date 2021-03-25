@@ -58,7 +58,7 @@ class compEnemy {
 
 const player1 = new userPlayer ("Alex");
 const enemy1 = new compEnemy("Enemy 1", 3);
-const enemy2 = new compEnemy("Enemy 2", 6)
+const enemy2 = new compEnemy("Enemy 2", 6);
 
 
 // console.log(player1);
@@ -74,6 +74,8 @@ const enemy2 = new compEnemy("Enemy 2", 6)
 // FUNCTIONS //
 
 const startGame = () => {
+    const startAlert = alert("Let's go!");
+    startAlert;
     console.log("Start!!");
 }
 

@@ -37,31 +37,17 @@ body{
 
 .right > img {
   width: 100%;
+  height: 100%;
 }
 
 .the-Score , .the-Health, .the-Round{
   
-  /* display: flex; */
-  /* flex-direction: row;
-  flex-wrap: wrap-reverse; */
-  /* justify-content: center;
-  align-content: space-between ; */
-  
-  position: absolute;
-
-  /* float: right;
-  width: 50%; */
-  /* display:inline;
-  top: auto; */
-  
+  color: white;
+  display: inline-flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  top: 1rem;
 }
-
-/* .the-Health{
-  text-align: left;
-  color: green;
-  display: inline;
-  top:auto;
-} */
 
 h3{
   color: blue;
@@ -74,9 +60,31 @@ p{
 }
 
 .player, .enemy {
- display: inline-block;
- top:auto;
+ display: inline-flex;
+ flex-direction: row;
+ background-image: url("../images/enemyplaceholder.png");
 
 }
+
+#start, #dream, #nightmare, #give-up {
+  display: inline-flex;
+  flex-direction: column;
+  right: 50%;
+}
+
+  /* position: absolute; */
+  /* float: right;
+  width: 50%; */
+  /* display:inline;
+  top: auto; */
+
+  /* .the-Health{
+  text-align: left;
+  color: green;
+  display: inline;
+  top:auto;
+} */
+
+  
 
 /*# sourceMappingURL=main.css.map */
