@@ -40,12 +40,17 @@ body{
 }
 
 .the-Score , .the-Health, .the-Round{
-  display: flex;
-  flex-direction: row;
+  
+  /* display: flex; */
+  /* flex-direction: row;
+  flex-wrap: wrap-reverse; */
+  /* justify-content: center;
+  align-content: space-between ; */
+  
+  position: absolute;
+
   /* float: right;
   width: 50%; */
-  text-align: right;
-  color: gold;
   /* display:inline;
   top: auto; */
   

@@ -7,6 +7,7 @@ const dreamButton = document.querySelector("#dream");
 const nightmareButton = document.querySelector("#nightmare");
 const giveUpButton = document.querySelector("#give-up");
 const scoreBoard = document.querySelector("#score");
+const threeRounds = document.querySelector("#firstRound");
 
 // GLOBAL VARIABLES //
 
@@ -80,15 +81,18 @@ const startGame = () => {
 const theRounds = (nextRound = 1) => {
     while(score >= 5){
         rounds =+ nextRound;
+        threeRounds.innerHTML =score;
         //Round two begins
        // console.log("Round2");
        if(score >=15){
            //Round three
            rounds =+ nextRound;
+           threeRounds.innerHTML =score;
        }
        else if (score>=25){
-           //round four
+           //round four!
            rounds =+ nextRound;
+           threeRounds.innerHTML =score;
        }
     }
 }
