@@ -21,7 +21,7 @@ class userPlayer{
     constructor(name){
         this.name = name;
         this.playerHealth = 50;
-        this.dreamPower = 10;
+        this.dreamPower = 8;
         this.nightmarePower = 5;
     }
 
@@ -45,7 +45,7 @@ class userPlayer{
 class compEnemy {
     constructor(name){
         this.name = name;
-        this.enemyHealth = 40;
+        this.enemyHealth = 45;
         this.enemyPower = Math.floor(Math.random() * 3 + 3);
         
 
