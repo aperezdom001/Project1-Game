@@ -45,8 +45,8 @@ class userPlayer{
 class compEnemy {
     constructor(name){
         this.name = name;
-        this.enemyHealth = 25;
-        this.enemyPower = Math.floor(Math.random() * 5 + 6);
+        this.enemyHealth = 40;
+        this.enemyPower = Math.floor(Math.random() * 3 + 3);
         
 
         
@@ -68,8 +68,7 @@ const enemy2 = new compEnemy("Enemy 2");
 // FUNCTIONS //
 
 const startGame = () => {
-    const startAlert = alert("Let's go!");
-    startAlert;
+    alert("Let's go!");
     console.log("Start!!");
 }
 
@@ -99,11 +98,10 @@ const giveUp = () => {
     player1.playerHealth + ". Do you want to give up? yes or no?");
     
      if (giveAlert === "yes"){
-        const yesPrompt = alert ("Oh no! You became an evil creature and will forever haunt those tho run into you...");
-        yesPrompt;
+        alert ("Oh no! You became an evil creature and will forever haunt those tho run into you...");
         window.location.reload();
     }else if (giveAlert === "no"){
-        const noPrompt = alert ("Keep fighting!!! Don't lose hope.");
+        alert ("Keep fighting!!! Don't lose hope.");
         noPrompt;
     }
 
@@ -112,13 +110,19 @@ const giveUp = () => {
 
 const gameOver = () => {
     if(player1.playerHealth <= 0){
-        const overAlert = alert("Oh no! You became an evil creature and will forever haunt those tho run into you...");
-        return overAlert;
-    }
-    window.location.reload();
-    console.log("Whoops, game over.");
+        alert("Oh no! You became an evil creature and will forever haunt those tho run into you...");
+        console.log("Whoops, game over.");
+        window.location.reload();
+    } else if (score >= 30){
+        alert("You did it! Now figure out how to get home!");
+        console.log("You won!");
+        window.location.reload();
+    }   
+
 
 }
+
+
 
 // EVENT LISTENERS //
 
@@ -129,7 +133,7 @@ dreamButton.addEventListener("click", () =>{
     theRounds();
     enemy1.enemyAttack(player1);
     pHealth.innerHTML = player1.playerHealth;
-    
+    gameOver();
 });
 nightmareButton.addEventListener("click", () => {
     player1.nightmareAttack(enemy1);
@@ -139,12 +143,11 @@ nightmareButton.addEventListener("click", () => {
     enemy1.enemyAttack(player1);
     enemy2.enemyAttack(player1);
     pHealth.innerHTML = player1.playerHealth;
-  
+    gameOver();
 });
 giveUpButton.addEventListener("click", () => {
     giveUp(); 
 });
-
 
 
 
