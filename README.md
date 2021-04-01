@@ -74,7 +74,7 @@ There is no installation, but this is the link to play the game and to see
 what I described above in this project with the knowledge I learned in my 
 first three weeks of General Assembly's Software Engineering Immersive Program.
 
-Link: https://pages.git.generalassemb.ly/aperezdom/Unit1-Project1-Game/
+Link:  https://aperezdom001.github.io/Project1-Game/
 
 //// HOW TO USE ////
 
